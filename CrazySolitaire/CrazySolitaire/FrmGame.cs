@@ -1,10 +1,10 @@
 using CrazySolitaire.Properties;
 
 namespace CrazySolitaire {
-    public partial class Form1 : Form {
+    public partial class FrmGame : Form {
         private Game game;
 
-        public Form1() {
+        public FrmGame() {
             InitializeComponent();
         }
 
@@ -12,7 +12,6 @@ namespace CrazySolitaire {
             game = new();
             for (int i = 0; i < 52; i++) {
                 var card = game.Deck.Acquire();
-                flpTest.AddCard(card);
             }
         }
 

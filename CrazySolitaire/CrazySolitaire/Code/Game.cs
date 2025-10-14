@@ -92,14 +92,14 @@ public class Card {
     }
 }
 
-public class Column {
+public class TableauStack {
     public LinkedList<Card> cards;
 }
 
 public class Game {
     public Deck Deck { get; private set; }
     public Dictionary<Suit, Stack<Card>> FoundationStacks { get; set; }
-    public Column[] Columns;
+    public TableauStack[] TableauStacks;
 
     public Game() {
         Deck = new();

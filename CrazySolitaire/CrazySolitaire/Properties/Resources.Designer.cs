@@ -503,6 +503,46 @@ namespace CrazySolitaire.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FoundationStackBg_Clubs {
+            get {
+                object obj = ResourceManager.GetObject("FoundationStackBg_Clubs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FoundationStackBg_Diamonds {
+            get {
+                object obj = ResourceManager.GetObject("FoundationStackBg_Diamonds", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FoundationStackBg_Hearts {
+            get {
+                object obj = ResourceManager.GetObject("FoundationStackBg_Hearts", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FoundationStackBg_Spades {
+            get {
+                object obj = ResourceManager.GetObject("FoundationStackBg_Spades", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jack_of_clubs {
             get {
                 object obj = ResourceManager.GetObject("jack_of_clubs", resourceCulture);
