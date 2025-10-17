@@ -62,6 +62,7 @@
             Name = "FrmTitle";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmTitle";
+            Load += FrmTitle_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -4,11 +4,14 @@
             InitializeComponent();
         }
 
+        private void FrmTitle_Load(object sender, EventArgs e) {
+            Game.TitleForm = this;
+        }
+
         private void btnStartGame_Click(object sender, EventArgs e) {
             FrmGame frmGame = new();
             frmGame.Show();
-            this.Hide();
-            Game.OpenForms.Add(this);
+            Hide();
         }
     }
 }

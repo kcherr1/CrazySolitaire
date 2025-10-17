@@ -78,7 +78,7 @@ namespace CrazySolitaire {
         public static bool IsDraggingCard(Card c) => CurDragCard == c;
 
         private void FrmGame_FormClosing(object sender, FormClosingEventArgs e) {
-            Game.OpenForms[0].Close();
+            Game.TitleForm.Close();
         }
     }
 }

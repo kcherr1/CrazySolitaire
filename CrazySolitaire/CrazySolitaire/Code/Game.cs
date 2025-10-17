@@ -377,7 +377,7 @@ public class FoundationStack : IFindMoveableCards, IDropTarget, IDragFrom {
 }
 
 public static class Game {
-    public static List<Form> OpenForms { get; set; }
+    public static Form TitleForm { get; set; }
     public static Deck Deck { get; private set; }
     public static Dictionary<Suit, FoundationStack> FoundationStacks { get; set; }
     public static TableauStack[] TableauStacks;
@@ -385,7 +385,6 @@ public static class Game {
     public static int StockReloadCount { get; set; }
 
     static Game() {
-        OpenForms = new();
         StockReloadCount = 0;
     }
 
