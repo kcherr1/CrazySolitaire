@@ -34,40 +34,43 @@
             panFoundationStack_Spades = new Panel();
             panFoundationStack_Diamonds = new Panel();
             panTableauStack_0 = new Panel();
-            panel1 = new Panel();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
+            panTableauStack_1 = new Panel();
+            panTableauStack_2 = new Panel();
+            panTableauStack_3 = new Panel();
+            panTableauStack_4 = new Panel();
+            panTableauStack_5 = new Panel();
+            panTableauStack_6 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pbStock).BeginInit();
             SuspendLayout();
             // 
             // pbStock
             // 
-            pbStock.BackgroundImage = Properties.Resources.back_orange;
+            pbStock.BackgroundImage = Properties.Resources.back_green;
             pbStock.BackgroundImageLayout = ImageLayout.Stretch;
+            pbStock.BorderStyle = BorderStyle.Fixed3D;
             pbStock.Location = new Point(40, 27);
             pbStock.Name = "pbStock";
             pbStock.Size = new Size(90, 126);
             pbStock.TabIndex = 0;
             pbStock.TabStop = false;
+            pbStock.Click += pbStock_Click;
             // 
             // panTalon
             // 
             panTalon.Location = new Point(160, 27);
             panTalon.Name = "panTalon";
-            panTalon.Size = new Size(141, 126);
+            panTalon.Size = new Size(166, 126);
             panTalon.TabIndex = 1;
             // 
             // panFoundationStack_Clubs
             // 
+            panFoundationStack_Clubs.AllowDrop = true;
             panFoundationStack_Clubs.BackgroundImage = Properties.Resources.FoundationStackBg_Clubs;
             panFoundationStack_Clubs.BackgroundImageLayout = ImageLayout.Stretch;
             panFoundationStack_Clubs.BorderStyle = BorderStyle.FixedSingle;
             panFoundationStack_Clubs.Location = new Point(427, 26);
             panFoundationStack_Clubs.Name = "panFoundationStack_Clubs";
-            panFoundationStack_Clubs.Size = new Size(90, 126);
+            panFoundationStack_Clubs.Size = new Size(100, 126);
             panFoundationStack_Clubs.TabIndex = 2;
             // 
             // panFoundationStack_Hearts
@@ -77,7 +80,7 @@
             panFoundationStack_Hearts.BorderStyle = BorderStyle.FixedSingle;
             panFoundationStack_Hearts.Location = new Point(556, 27);
             panFoundationStack_Hearts.Name = "panFoundationStack_Hearts";
-            panFoundationStack_Hearts.Size = new Size(90, 126);
+            panFoundationStack_Hearts.Size = new Size(100, 126);
             panFoundationStack_Hearts.TabIndex = 3;
             // 
             // panFoundationStack_Spades
@@ -87,7 +90,7 @@
             panFoundationStack_Spades.BorderStyle = BorderStyle.FixedSingle;
             panFoundationStack_Spades.Location = new Point(685, 27);
             panFoundationStack_Spades.Name = "panFoundationStack_Spades";
-            panFoundationStack_Spades.Size = new Size(90, 126);
+            panFoundationStack_Spades.Size = new Size(100, 126);
             panFoundationStack_Spades.TabIndex = 3;
             // 
             // panFoundationStack_Diamonds
@@ -97,70 +100,71 @@
             panFoundationStack_Diamonds.BorderStyle = BorderStyle.FixedSingle;
             panFoundationStack_Diamonds.Location = new Point(814, 27);
             panFoundationStack_Diamonds.Name = "panFoundationStack_Diamonds";
-            panFoundationStack_Diamonds.Size = new Size(90, 126);
+            panFoundationStack_Diamonds.Size = new Size(100, 126);
             panFoundationStack_Diamonds.TabIndex = 3;
             // 
             // panTableauStack_0
             // 
+            panTableauStack_0.AllowDrop = true;
             panTableauStack_0.Location = new Point(40, 254);
             panTableauStack_0.Name = "panTableauStack_0";
-            panTableauStack_0.Size = new Size(90, 306);
+            panTableauStack_0.Size = new Size(101, 306);
             panTableauStack_0.TabIndex = 4;
             // 
-            // panel1
+            // panTableauStack_1
             // 
-            panel1.Location = new Point(169, 254);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(90, 306);
-            panel1.TabIndex = 5;
+            panTableauStack_1.Location = new Point(169, 254);
+            panTableauStack_1.Name = "panTableauStack_1";
+            panTableauStack_1.Size = new Size(101, 306);
+            panTableauStack_1.TabIndex = 5;
             // 
-            // panel2
+            // panTableauStack_2
             // 
-            panel2.Location = new Point(298, 254);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(90, 306);
-            panel2.TabIndex = 5;
+            panTableauStack_2.Location = new Point(298, 254);
+            panTableauStack_2.Name = "panTableauStack_2";
+            panTableauStack_2.Size = new Size(101, 306);
+            panTableauStack_2.TabIndex = 5;
             // 
-            // panel3
+            // panTableauStack_3
             // 
-            panel3.Location = new Point(427, 254);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(90, 306);
-            panel3.TabIndex = 5;
+            panTableauStack_3.Location = new Point(427, 254);
+            panTableauStack_3.Name = "panTableauStack_3";
+            panTableauStack_3.Size = new Size(101, 306);
+            panTableauStack_3.TabIndex = 5;
             // 
-            // panel4
+            // panTableauStack_4
             // 
-            panel4.Location = new Point(556, 254);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(90, 306);
-            panel4.TabIndex = 5;
+            panTableauStack_4.Location = new Point(556, 254);
+            panTableauStack_4.Name = "panTableauStack_4";
+            panTableauStack_4.Size = new Size(101, 306);
+            panTableauStack_4.TabIndex = 5;
             // 
-            // panel5
+            // panTableauStack_5
             // 
-            panel5.Location = new Point(685, 254);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(90, 306);
-            panel5.TabIndex = 5;
+            panTableauStack_5.Location = new Point(685, 254);
+            panTableauStack_5.Name = "panTableauStack_5";
+            panTableauStack_5.Size = new Size(101, 306);
+            panTableauStack_5.TabIndex = 5;
             // 
-            // panel6
+            // panTableauStack_6
             // 
-            panel6.Location = new Point(814, 254);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(90, 306);
-            panel6.TabIndex = 5;
+            panTableauStack_6.Location = new Point(814, 254);
+            panTableauStack_6.Name = "panTableauStack_6";
+            panTableauStack_6.Size = new Size(101, 306);
+            panTableauStack_6.TabIndex = 5;
             // 
             // FrmGame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 64, 0);
-            ClientSize = new Size(966, 674);
-            Controls.Add(panel6);
-            Controls.Add(panel5);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            ClientSize = new Size(976, 674);
+            Controls.Add(panTableauStack_6);
+            Controls.Add(panTableauStack_5);
+            Controls.Add(panTableauStack_4);
+            Controls.Add(panTableauStack_3);
+            Controls.Add(panTableauStack_2);
+            Controls.Add(panTableauStack_1);
             Controls.Add(panTableauStack_0);
             Controls.Add(panFoundationStack_Diamonds);
             Controls.Add(panFoundationStack_Spades);
@@ -169,7 +173,9 @@
             Controls.Add(panTalon);
             Controls.Add(pbStock);
             Name = "FrmGame";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Crazy Solitaire";
+            FormClosing += FrmGame_FormClosing;
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pbStock).EndInit();
             ResumeLayout(false);
@@ -184,11 +190,11 @@
         private Panel panFoundationStack_Spades;
         private Panel panFoundationStack_Diamonds;
         private Panel panTableauStack_0;
-        private Panel panel1;
-        private Panel panel2;
-        private Panel panel3;
-        private Panel panel4;
-        private Panel panel5;
-        private Panel panel6;
+        private Panel panTableauStack_1;
+        private Panel panTableauStack_2;
+        private Panel panTableauStack_3;
+        private Panel panTableauStack_4;
+        private Panel panTableauStack_5;
+        private Panel panTableauStack_6;
     }
 }
