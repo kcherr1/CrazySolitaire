@@ -89,7 +89,6 @@ public class Card {
                       : Resources.back_green;
     }
     private Point dragOffset;
-    private Point absLocBeforeDrag;
     private Point relLocBeforeDrag;
     private Control conBeforeDrag;
     private IDropTarget lastDropTarget;
@@ -119,7 +118,6 @@ public class Card {
                 FrmGame.DragCard(this);
                 dragOffset = e.Location;
                 conBeforeDrag = PicBox.Parent;
-                absLocBeforeDrag = PicBox.Location + (Size)PicBox.Parent.Location;
                 relLocBeforeDrag = PicBox.Location;
                 conBeforeDrag.RemCard(this);
                 FrmGame.Instance.AddCard(this);
@@ -135,46 +133,14 @@ public class Card {
                 if (lastDropTarget is not null && lastDropTarget.CanDrop(this)) {
                     FrmGame.CardDraggedFrom.RemCard(this);
                     lastDropTarget.Dropped(this);
+                    PicBox.BringToFront();
                 }
                 else {
-                    Timer tmrMoveBack = new() { Interval = 50 };
-                    tmrMoveBack.Tick += (sender, e) => {
-                        const int TOP_SPEED = 100;
-                        if (PicBox.Top < absLocBeforeDrag.Y - TOP_SPEED) {
-                            PicBox.Top += TOP_SPEED;
-                        }
-                        else if (PicBox.Top > absLocBeforeDrag.Y + TOP_SPEED) {
-                            PicBox.Top -= TOP_SPEED;
-                        }
-                        else {
-                            PicBox.Top = absLocBeforeDrag.Y;
-                        }
-
-                        const int LEFT_SPEED = 100;
-                        if (PicBox.Left < absLocBeforeDrag.X - LEFT_SPEED) {
-                            PicBox.Left += LEFT_SPEED;
-                        }
-                        else if (PicBox.Left > absLocBeforeDrag.X + LEFT_SPEED) {
-                            PicBox.Left -= LEFT_SPEED;
-                        }
-                        else {
-                            PicBox.Left = absLocBeforeDrag.X;
-                        }
-
-                        if (PicBox.Location == absLocBeforeDrag) {
-                        }
-                        else {
-                            FrmGame.Instance.RemCard(this);
-                            conBeforeDrag?.AddCard(this);
-                            PicBox.Location = relLocBeforeDrag;
-                            PicBox.BringToFront();
-                        }
-                        tmrMoveBack.Enabled = false;
-                        tmrMoveBack = null;
-                    };
-                    tmrMoveBack.Start();
+                    FrmGame.Instance.RemCard(this);
+                    conBeforeDrag?.AddCard(this);
+                    PicBox.Location = relLocBeforeDrag;
+                    PicBox.BringToFront();
                 }
-                Game.CallDragEndedOnAll();
             }
         };
         PicBox.MouseMove += (sender, e) => {
@@ -252,17 +218,24 @@ public class TableauStack : IFindMoveableCards, IDropTarget, IDragFrom {
     }
 
     public bool CanDrop(Card c) {
-        Card lastCard = Cards.Last.Value;
-        bool suitCheck = ((int)lastCard.Suit % 2 != (int)c.Suit % 2);
-        bool typeCheck = lastCard.Type == c.Type + 1;
-        return (suitCheck && typeCheck);
+        if (Cards.Count == 0) {
+            return c.Type == CardType.KING;
+        }
+        else {
+            Card lastCard = Cards.Last.Value;
+            bool suitCheck = ((int)lastCard.Suit % 2 != (int)c.Suit % 2);
+            bool typeCheck = lastCard.Type == c.Type + 1;
+            return (suitCheck && typeCheck);
+        }
     }
 
     public void Dropped(Card c) {
         Cards.AddLast(c);
         FrmGame.Instance.RemCard(c);
         Panel.AddCard(c);
-        c.AdjustLocation(0, Cards.Count * 20);
+        c.AdjustLocation(0, (Cards.Count - 1) * 20);
+        c.PicBox.BringToFront();
+        Panel.Refresh();
         c.PicBox.BringToFront();
     }
 
@@ -304,9 +277,9 @@ public class Talon : IFindMoveableCards, IDragFrom {
     public List<Card> FindMoveableCards() => (Cards.Count > 0 ? [Cards.Peek()] : []);
 
     public void RemCard(Card card) {
-        List<Card> cards = Cards.ToList<Card>();
-        cards.Remove(card);
-        Cards = new Stack<Card>(cards);
+        if (Cards.Peek() == card) {
+            Cards.Pop();
+        }
     }
 }
 
